@@ -1,0 +1,33 @@
+<table class="product-order-table">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price Range</th>
+      <th>Add</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders; let i = index">
+      <td>
+        <select [(ngModel)]="order.product" (change)="onProductChange(i)">
+          <option value="">Choose Product</option>
+          <option *ngFor="let product of products" [value]="product">{{product}}</option>
+        </select>
+      </td>
+      <td>
+        <select [(ngModel)]="order.quantity" (change)="onQuantityChange(i)">
+          <option value="">Choose Quantity</option>
+          <option *ngFor="let quantity of quantities" [value]="quantity">{{quantity}}</option>
+        </select>
+      </td>
+      <td>
+        <select [(ngModel)]="order.priceRange" (change)="onPriceRangeChange(i)">
+          <option value="">Choose Price Range</option>
+          <option *ngFor="let priceRange of priceRanges" [value]="priceRange">{{priceRange}}</option>
+        </select>
+      </td>
+      <td><button (click)="showOrder()">Add</button></td>
+    </tr>
+  </tbody>
+</table>

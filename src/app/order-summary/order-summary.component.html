@@ -1,0 +1,16 @@
+<table class="order-summary-table">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{order.product}}</td>
+      <td>{{order.quantity}}</td>
+      <td>{{order.priceRange}}</td>
+    </tr>
+  </tbody>
+</table>

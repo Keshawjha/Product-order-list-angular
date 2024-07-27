@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Product Order List</h1>
+  <div class="product-order-container">
+    <app-product-order (ordersUpdated)="updateOrders($event)"></app-product-order>
+  </div>
+  <button (click)="toggleOrderList()">Show Order</button>
+  <div *ngIf="showOrderList">
+    <app-order-summary [orders]="orders"></app-order-summary>
+  </div>
+  <button (click)="readOrder()">What is my Order?</button>
+</div>
+<div class="body"></div>
